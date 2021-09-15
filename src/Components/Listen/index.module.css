@@ -12,3 +12,8 @@
   height: 15vh;
   border: 3px solid rgba(63, 167, 253, 0.103);
 }
+
+.contentBox {
+  height: 70vh;
+  border: 3px solid rgba(63, 167, 253, 0.103);
+}
