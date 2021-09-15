@@ -1,0 +1,14 @@
+.recordBox {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+  font-size: 3em;
+}
+
+.headerBox {
+  height: 15vh;
+  border: 3px solid rgba(63, 167, 253, 0.103);
+}

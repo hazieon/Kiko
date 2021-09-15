@@ -2,6 +2,8 @@ import "./App.css";
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
+import Record from "./Components/Record";
+import Listen from "./Components/Listen";
 function App() {
   return (
     <div>
@@ -13,17 +15,21 @@ function App() {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <Link to="/listen">Listen</Link>
               </li>
               <li>
-                <Link to="/users">Users</Link>
+                <Link to="/record">Record</Link>
               </li>
             </ul>
           </nav>
 
           <Switch>
-            <Route path="/about"></Route>
-            <Route path="/users"></Route>
+            <Route path="/record">
+              <Record />
+            </Route>
+            <Route path="/listen">
+              <Listen />
+            </Route>
             <Route path="/">
               <Home />
             </Route>

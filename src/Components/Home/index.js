@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./index.module.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -9,12 +10,22 @@ function Home() {
       </div>
       <div className={styles.navigationBox}>
         <div className={styles.buttonBox}>
-          <button className={styles.navigationButton} id={styles.recordButton}>
-            Record
-          </button>
-          <button className={styles.navigationButton} id={styles.listenButton}>
-            Listen
-          </button>
+          <Link to="/record">
+            <button
+              className={styles.navigationButton}
+              id={styles.recordButton}
+            >
+              Record
+            </button>
+          </Link>
+          <Link to="/listen">
+            <button
+              className={styles.navigationButton}
+              id={styles.listenButton}
+            >
+              Listen
+            </button>
+          </Link>
         </div>
       </div>
     </div>
