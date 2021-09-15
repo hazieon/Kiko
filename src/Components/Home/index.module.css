@@ -5,10 +5,11 @@
 }
 
 .header {
+  font-size: 3em;
 }
 
 .headerBox {
-  height: 20vh;
+  height: 15vh;
   border: 3px solid rgba(63, 167, 253, 0.103);
 }
 
@@ -20,7 +21,7 @@
 .buttonBox {
   display: inline-block;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 20%;
   max-width: 50vw;
   height: auto;
   border: 3px solid rgba(63, 167, 253, 0.103);
@@ -28,17 +29,34 @@
 
 button {
   cursor: pointer;
+  font-size: xx-large;
+  font-weight: bold;
+  letter-spacing: 0.15rem;
 }
 .navigationButton {
+  color: white;
+  outline: none;
   height: 150px;
   width: 150px;
   margin: 15px;
   border-radius: 20px;
+  transition: 0.3s ease-in-out;
 }
 #recordButton {
-  border: 3px solid rgb(55, 52, 255);
+  background-color: var(--purple);
+  box-shadow: 0px 5px 3px 2px var(--light-matter);
+  /* border: 3px solid rgb(55, 52, 255); */
 }
 
 #listenButton {
-  border: 3px solid red;
+  background-color: var(--red);
+  box-shadow: 0px 5px 5px 2px var(--light-matter);
+}
+
+.navigationButton:hover {
+  filter: saturate(1.3);
+}
+
+.navigationButton:active {
+  filter: saturate(2);
 }

@@ -5,7 +5,7 @@ function Home() {
   return (
     <div className={styles.homeBox}>
       <div className={styles.headerBox}>
-        <h1 className={styles.header}>Home</h1>
+        <h1 className={styles.header}>Kiko</h1>
       </div>
       <div className={styles.navigationBox}>
         <div className={styles.buttonBox}>
