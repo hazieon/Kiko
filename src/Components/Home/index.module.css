@@ -1,0 +1,44 @@
+.homeBox {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+}
+
+.headerBox {
+  height: 20vh;
+  border: 3px solid rgba(63, 167, 253, 0.103);
+}
+
+.navigationBox {
+  height: 70vh;
+  border: 3px solid rgba(63, 167, 253, 0.103);
+}
+
+.buttonBox {
+  display: inline-block;
+  margin: auto;
+  margin-top: 15%;
+  max-width: 50vw;
+  height: auto;
+  border: 3px solid rgba(63, 167, 253, 0.103);
+}
+
+button {
+  cursor: pointer;
+}
+.navigationButton {
+  height: 150px;
+  width: 150px;
+  margin: 15px;
+  border-radius: 20px;
+}
+#recordButton {
+  border: 3px solid rgb(55, 52, 255);
+}
+
+#listenButton {
+  border: 3px solid red;
+}
