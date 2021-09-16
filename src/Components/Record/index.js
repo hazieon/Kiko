@@ -12,7 +12,7 @@ function Record() {
       <div className={styles.contentBox}>
         <div className={styles.recordButtonBox}>
           <button
-            className={recording ? styles.recordButton : styles.recordingNow}
+            className={recording ? styles.recordingNow : styles.recordButton}
             onClick={() => setRecording(!recording)}
           >
             Record ◎
