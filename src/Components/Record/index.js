@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./index.module.css";
+import { RecorderApp } from "../RecorderApp";
 
 function Record() {
   const [recording, setRecording] = useState(false);
@@ -11,24 +12,19 @@ function Record() {
       </div>
       <div className={styles.contentBox}>
         <div className={styles.recordButtonBox}>
-          <button
+          {/* <button
             className={recording ? styles.recordingNow : styles.recordButton}
             onClick={() => setRecording(!recording)}
           >
             Record ◎
-          </button>
+          </button> */}
         </div>
-        <h2 className={recording ? styles.noMessage : styles.recordingMessage}>
-          Press the button to record a message ↑
-        </h2>
+        <RecorderApp />
         {/* <div className={styles.controlsBox}>
-          <div className={styles.controlsBox}></div>
-        </div> */}
-        <div className={styles.controlsBox}>
           <button className={styles.controls}>▶</button>
           <button className={styles.controls}>■</button>
           <button className={styles.controls}> ⏸</button>
-        </div>
+        </div> */}
         <div className={styles.controlsBox}>
           <button className={styles.saveButon}>Save</button>
         </div>
