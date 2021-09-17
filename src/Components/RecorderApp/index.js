@@ -34,7 +34,9 @@ export class RecorderApp extends React.Component {
             className={
               this.state.record ? styles.recordingNow : styles.recordButton
             }
-            onClick={this.startRecording}
+            onClick={
+              this.state.record ? this.stopRecording : this.startRecording
+            }
             type="button"
           >
             Start
@@ -47,17 +49,18 @@ export class RecorderApp extends React.Component {
           onStop={this.onStop}
           onData={this.onData}
           strokeColor="#000000"
-          backgroundColor="lightgrey"
+          backgroundColor="rgb(117, 193, 255)"
           visualSetting="frequencyBars"
         />
-
-        <button
-          className={styles.controls}
-          onClick={this.stopRecording}
-          type="button"
-        >
-          Stop ■
-        </button>
+        <div className={styles.recordButtonBox}>
+          <button
+            className={this.state.record ? styles.stop : styles.noStop}
+            onClick={this.stopRecording}
+            type="button"
+          >
+            Stop ■
+          </button>
+        </div>
       </div>
     );
   }

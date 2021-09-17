@@ -11,14 +11,14 @@ function Record() {
         <h1 className={styles.header}>Record a Message</h1>
       </div>
       <div className={styles.contentBox}>
-        <div className={styles.recordButtonBox}>
-          {/* <button
+        {/* <div className={styles.recordButtonBox}>
+          <button
             className={recording ? styles.recordingNow : styles.recordButton}
             onClick={() => setRecording(!recording)}
           >
             Record ◎
-          </button> */}
-        </div>
+          </button>
+        </div> */}
         <RecorderApp />
         {/* <div className={styles.controlsBox}>
           <button className={styles.controls}>▶</button>
