@@ -1,70 +1,86 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ReactMic } from "react-mic";
 import styles from "./index.module.css";
 
-export class RecorderApp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      record: false,
-    };
+export function RecorderApp() {
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     record: false,
+  //   };
+  // }
+  const [recording, setRecording] = useState(false);
+  const [blob, setBlob] = useState({});
+
+  function startRecording() {
+    setRecording(true);
+  }
+  function stopRecording() {
+    setRecording(false);
   }
 
-  startRecording = () => {
-    this.setState({ record: true });
-  };
-
-  stopRecording = () => {
-    this.setState({ record: false });
-  };
-
-  onData(recordedBlob) {
-    console.log("chunk of real-time data is: ", recordedBlob);
+  function onData(recordedBlob) {
+    // console.log("chunk of real-time data is: ", recordedBlob);
   }
 
-  onStop(recordedBlob) {
-    console.log("recordedBlob is: ", recordedBlob);
+  function onStop(recordedBlob) {
+    // console.log("recordedBlob is: ", recordedBlob);
+    setBlob(recordedBlob);
   }
+  useEffect(() => {
+    console.log("blob:", blob);
+  }, [blob]);
+  // startRecording = () => {
+  //   this.setState({ record: true });
+  // };
 
-  render() {
-    return (
-      <div>
-        <div className={styles.recordButtonBox}>
-          <button
-            className={
-              this.state.record ? styles.recordingNow : styles.recordButton
-            }
-            onClick={
-              this.state.record ? this.stopRecording : this.startRecording
-            }
-            type="button"
-          >
-            Start
-          </button>
-        </div>
-        <ReactMic
-          className={styles.reactMic}
-          record={this.state.record}
-          pause={false}
-          onStop={this.onStop}
-          onData={this.onData}
-          strokeColor="#000000"
-          backgroundColor="rgb(117, 193, 255)"
-          visualSetting="frequencyBars"
-        />
-        <div className={styles.recordButtonBox}>
-          <button
-            className={this.state.record ? styles.stop : styles.noStop}
-            onClick={this.stopRecording}
-            type="button"
-          >
-            Stop ■
-          </button>
-        </div>
+  // stopRecording = () => {
+  //   this.setState({ record: false });
+  // };
+
+  // onData(recordedBlob) {
+  //   console.log("chunk of real-time data is: ", recordedBlob);
+  // }
+
+  // onStop(recordedBlob) {
+  //   console.log("recordedBlob is: ", recordedBlob);
+  // }
+
+  // render() {
+  return (
+    <div>
+      <div className={styles.recordButtonBox}>
+        <button
+          className={recording ? styles.recordingNow : styles.recordButton}
+          onClick={recording ? stopRecording : startRecording}
+          type="button"
+        >
+          Start
+        </button>
       </div>
-    );
-  }
+      <ReactMic
+        className={styles.reactMic}
+        record={recording}
+        pause={false}
+        onStop={onStop}
+        onData={onData}
+        strokeColor="#000000"
+        backgroundColor="rgb(117, 193, 255)"
+        visualSetting="frequencyBars"
+      />
+      <div className={styles.recordButtonBox}>
+        <button
+          className={recording ? styles.stop : styles.noStop}
+          onClick={stopRecording}
+          type="button"
+        >
+          Stop ■
+        </button>
+      </div>
+    </div>
+  );
 }
+// }
 
 // <ReactMic
 //   record={boolean}         // defaults -> false.  Set to true to begin recording
