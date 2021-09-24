@@ -20,11 +20,7 @@ function Record() {
           </button>
         </div> */}
         <RecorderApp />
-        {/* <div className={styles.controlsBox}>
-          <button className={styles.controls}>▶</button>
-          <button className={styles.controls}>■</button>
-          <button className={styles.controls}> ⏸</button>
-        </div> */}
+
         <div className={styles.controlsBox}>
           <button className={styles.saveButon}>Save</button>
         </div>

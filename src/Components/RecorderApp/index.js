@@ -30,23 +30,7 @@ export function RecorderApp() {
   useEffect(() => {
     console.log("blob:", blob);
   }, [blob]);
-  // startRecording = () => {
-  //   this.setState({ record: true });
-  // };
 
-  // stopRecording = () => {
-  //   this.setState({ record: false });
-  // };
-
-  // onData(recordedBlob) {
-  //   console.log("chunk of real-time data is: ", recordedBlob);
-  // }
-
-  // onStop(recordedBlob) {
-  //   console.log("recordedBlob is: ", recordedBlob);
-  // }
-
-  // render() {
   return (
     <div>
       <div className={styles.recordButtonBox}>
@@ -77,6 +61,7 @@ export function RecorderApp() {
           Stop ■
         </button>
       </div>
+      <button>play</button>
     </div>
   );
 }
@@ -101,3 +86,21 @@ export function RecorderApp() {
 //   sampleRate={96000}        // defaults -> 44100 (44.1 kHz).  It accepts values only in range: 22050 to 96000 (available in React-Mic-Gold)
 //   timeSlice={3000}          // defaults -> 4000 milliseconds.  The interval at which captured audio is returned to onData callback (available in React-Mic-Gold).
 // />
+
+// startRecording = () => {
+//   this.setState({ record: true });
+// };
+
+// stopRecording = () => {
+//   this.setState({ record: false });
+// };
+
+// onData(recordedBlob) {
+//   console.log("chunk of real-time data is: ", recordedBlob);
+// }
+
+// onStop(recordedBlob) {
+//   console.log("recordedBlob is: ", recordedBlob);
+// }
+
+// render() {
