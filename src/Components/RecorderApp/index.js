@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactMic } from "react-mic";
+import ReactPlayer from "react-player";
 import styles from "./index.module.css";
 
 export function RecorderApp() {
@@ -11,6 +12,7 @@ export function RecorderApp() {
   // }
   const [recording, setRecording] = useState(false);
   const [blob, setBlob] = useState({});
+  const [url, setUrl] = useState();
 
   function startRecording() {
     setRecording(true);
@@ -25,11 +27,19 @@ export function RecorderApp() {
 
   function onStop(recordedBlob) {
     // console.log("recordedBlob is: ", recordedBlob);
+    const url = URL.createObjectURL(recordedBlob.blob);
+    setUrl(url);
     setBlob(recordedBlob);
   }
   useEffect(() => {
     console.log("blob:", blob);
+    console.log("url", url);
   }, [blob]);
+
+  const handlePlay = () => {
+    const tmp = new Audio(url); //passing your state (hook)
+    tmp.play(); //simple play of an audio element.
+  };
 
   return (
     <div>
@@ -61,7 +71,8 @@ export function RecorderApp() {
           Stop ■
         </button>
       </div>
-      <button>play</button>
+      <button onClick={handlePlay}>Play</button>
+      {/* <ReactPlayer url={url} playing /> */}
     </div>
   );
 }
