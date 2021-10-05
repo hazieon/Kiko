@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ReactMic } from "react-mic";
-import ReactPlayer from "react-player";
+import Player from "../AudioPlayer";
 import styles from "./index.module.css";
 
 export function RecorderApp() {
@@ -71,7 +71,8 @@ export function RecorderApp() {
           Stop ■
         </button>
       </div>
-      <button onClick={handlePlay}>Play</button>
+      {/* <button onClick={handlePlay}>Play</button> */}
+      <Player url={url} />
       {/* <ReactPlayer url={url} playing /> */}
     </div>
   );

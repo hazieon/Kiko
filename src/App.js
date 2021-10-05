@@ -14,13 +14,13 @@ function App() {
               <li>
                 <Link to="/">Home</Link>
               </li>
-
+              {/* 
               <li>
                 <Link to="/record">Record</Link>
               </li>
               <li>
                 <Link to="/listen">Listen</Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
 
