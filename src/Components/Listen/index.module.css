@@ -17,3 +17,11 @@
   height: 70vh;
   border: 3px solid rgba(63, 167, 253, 0.103);
 }
+
+.messageItemBox {
+  border: 3px solid lightgrey;
+  max-width: 75vw;
+  margin: auto;
+  margin-top: 1rem;
+  border-radius: 10px;
+}

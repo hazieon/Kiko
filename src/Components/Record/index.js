@@ -22,7 +22,14 @@ function Record() {
         <RecorderApp />
 
         <div className={styles.controlsBox}>
-          <button className={styles.saveButon}>Save</button>
+          <button
+            className={styles.saveButon}
+            onClick={() => {
+              console.log("saving audio message...");
+            }}
+          >
+            Save
+          </button>
         </div>
       </div>
     </div>
